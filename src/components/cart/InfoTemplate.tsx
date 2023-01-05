@@ -1,5 +1,5 @@
-import React from 'react';
-import './info.module.css';
+import React, { useState, useEffect } from 'react';
+import './info.css';
 
 type Books = {
   id: number;
@@ -8,8 +8,25 @@ type Books = {
 };
 
 const InfoTemplate = (bookList: { array: any }) => {
+  const [sortArr, setSort] = useState<Books[]>([]);
+  const [toggle, setToggle] = useState<boolean>(false);
+  // props.changedLogging();
+
   const { array } = bookList;
-  console.log(array);
+
+  useEffect(() => {
+    setSort(array);
+  }, [array]);
+
+  const sortedArrayDown = () => {
+    setSort(() => sortArr.sort((a, b) => a.price - b.price));
+  };
+
+  const sortedArrayUp = () => {
+    setSort(() => sortArr.sort((a, b) => b.price - a.price));
+  };
+
+  console.log('sortArr', sortArr);
 
   return (
     <div className='wrapper'>
@@ -22,7 +39,7 @@ const InfoTemplate = (bookList: { array: any }) => {
             <span>Animals</span>
           </div>
           <ul className='list'>
-            {array.map(({ name, id, price }: Books) => (
+            {sortArr.map(({ name, id, price }: Books) => (
               <li key={id}>
                 <div className='nameCategory'>
                   <span className='spaceCategory'>{id}</span>

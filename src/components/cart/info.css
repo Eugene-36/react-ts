@@ -16,11 +16,44 @@
   width: 250px;
   height: 50px;
   border-redius: 50px;
+  margin: auto;
   box-shadow: rgb(0 0 0 / 35%) 0px 5px 15px;
   border-radius: 50px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+}
+.nameCategory {
+  display: flex;
+}
+.spaceCategory {
+  margin: 0 15px 0 0;
+}
+.list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 235px;
+  height: 25px;
+}
+.priceLabel {
+  cursor: pointer;
+}
+.flexArrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.down {
+  transform: rotateX(180deg);
+}
+.up {
+  transform: rotateX(0deg);
+}
+.css-13cymwt-control {
+  cursor: pointer;
 }
 /* width: 250px;
     height: 50px;
