@@ -18,17 +18,12 @@ function App() {
     axios
       .get(`/books.json`)
       .then(function ({ data }) {
-        // handle success
-        console.log(data);
         setList(data);
       })
       .catch(function (error) {
-        // handle error
         console.log(error);
       })
-      .finally(function () {
-        // always executed
-      });
+      .finally(function () {});
   }, []);
 
   return (
