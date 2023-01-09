@@ -55,7 +55,6 @@ const InfoTemplate = (bookList: { array: any }) => {
 
   const handleChange = (selectedOption: any) => {
     setSelectedOption(selectedOption);
-    console.log('selectedOption', selectedOption);
 
     setSort(
       array.filter(({ category }: Books) => {
